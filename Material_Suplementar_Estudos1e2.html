@@ -248,7 +248,7 @@ div.tocify {
 parceiro: os Estudos 1 e 2</h3>
 <h4 class="author">Solimary García Hernández, Erika M. Santana, Paulo R.
 Guimarães Jr.</h4>
-<h4 class="date">26 de September de 2026</h4>
+<h4 class="date">28 de September de 2026</h4>
 
 </div>
 
@@ -425,10 +425,12 @@ conectância sobe quando o censo encurta.</p>
 discretas e não sobrepostas. Cada macho expressa uma característica
 sexualmente selecionada, o <em>traço</em>, que chamamos de
 <code>z</code>. Cada fêmea tem um <em>pico de preferência</em>,
-<code>p</code>, que é o valor de traço masculino que ela mais aprecia, e
-uma <em>exigência</em>, <code>s</code>, que determina o quanto ela
-tolera afastamentos desse pico. A probabilidade de uma fêmea aceitar um
-macho depende da distância entre o traço dele e o pico dela.</p>
+<code>p</code>, que é o valor de traço masculino que centra a sua curva
+de aceite, e uma <em>exigência</em>, <code>s</code>, que determina o
+quanto a probabilidade de aceite muda à medida que o traço do macho se
+afasta desse valor. A probabilidade de uma fêmea aceitar um macho é
+função da diferença entre o traço dele e o pico dela, e a forma dessa
+função é a curva de preferência.</p>
 <p>Duas quantidades organizam todo o desenho experimental:</p>
 <ul>
 <li><em>σp</em> é a dispersão dos picos de preferência entre as fêmeas.
@@ -488,6 +490,9 @@ estabilizadora</td>
 </tr>
 </tbody>
 </table>
+<p>A gaussiana e a sigmoide já estavam no desenho anterior do projeto,
+ali designadas pelo efeito que produzem: seleção estabilizadora e
+seleção direcional. A aleatória e a disruptiva foram acrescentadas.</p>
 <p>Essas cores identificam as quatro curvas em todas as figuras do
 documento.</p>
 <p>A curva aleatória cumpre a função de controle. Nela a fêmea aceita
@@ -548,9 +553,9 @@ nunca <em>quantas</em> vagas existem. O tamanho da população fica assim
 constante por construção, o que mantém as redes comparáveis entre
 combinações: a seleção natural muda a composição do pool de machos, que
 é o efeito de interesse, e não a sua densidade, que seria um
-confundimento. Na terminologia de Wallace, é seleção branda, com
-regulação por densidade, e não seleção dura com mortalidade em termos
-absolutos.</p>
+confundimento. Na terminologia de Wallace, esse regime é uma seleção
+branda, com regulação por densidade, e não uma seleção dura, com
+mortalidade em termos absolutos.</p>
 <p>O mesmo vale para as fêmeas, com uma diferença: elas não passam por
 viabilidade, porque a seleção natural do modelo age sobre o traço
 masculino. As 200 fêmeas adultas são um sorteio uniforme entre as
@@ -620,8 +625,8 @@ preferência</td>
 <p>O Controle roda uma geração, porque sem herança a segunda geração
 seria um sorteio independente com a mesma distribuição. Cada cenário
 exige assim cerca de cem vezes menos tempo de computação do que no
-Estudo 2, que roda 100 gerações, e é essa economia que permite cruzar σp
-com σz por inteiro.</p>
+Estudo 2, que roda 100 gerações, e essa economia permite cruzar σp com
+σz por inteiro.</p>
 <p>No Estudo 2 a característica que não é herdada, a preferência da
 fêmea, é re-sorteada a cada geração da mesma distribuição. O
 procedimento mantém a dispersão fixa no valor do tratamento durante as
@@ -680,8 +685,9 @@ consulta:</p>
 </tr>
 </tbody>
 </table>
-<p>Os dois sigmas se cruzam por inteiro apenas no Controle. No Estudo 2
-σp percorre os sete níveis e σz é condição inicial fixada em 1.0.</p>
+<p>Os dois sigmas se cruzam por inteiro apenas no Controle (Estudo 1).
+No Estudo 2 σp percorre os sete níveis e σz é condição inicial fixada em
+1.0.</p>
 </div>
 </div>
 <div id="organização-do-documento" class="section level1">
@@ -972,9 +978,9 @@ avaliou, e sim com aqueles que aceitou entre esses dez. Quantos
 parceiros ela consegue depende portanto da curva de preferência e de
 A_max, e não apenas de k.</p>
 <p>Por isso registramos a poliandria realizada como variável resposta, e
-é ela que entra nas análises em lugar do k nominal. Os painéis abaixo
-mostram o panorama completo, com a proporção de fêmeas que atingiu k, o
-número de arestas da rede e a proporção de fêmeas que não conseguiu
+ela entra nas análises em lugar do k nominal. Os painéis abaixo mostram
+o panorama completo, com a proporção de fêmeas que atingiu k, o número
+de arestas da rede e a proporção de fêmeas que não conseguiu
 acasalar.</p>
 <div id="sem-seleção-natural-1" class="section level3 tabset">
 <h3 class="tabset">Sem seleção natural</h3>
@@ -1081,16 +1087,10 @@ Esta seção é o espelho, e não é a mesma informação: numa rede bipartida
 os dois lados podem ter distribuições de grau bem diferentes, porque o
 número total de acasalamentos é o mesmo mas o número de indivíduos que o
 reparte não é.</p>
-<p>O primeiro painel é o grau médio sobre todos os machos, o segundo a
-média só entre os que acasalaram, e a distância entre os dois mede
-exatamente quantos ficaram de fora, que é o terceiro painel. O quarto é
-a oportunidade de seleção sexual, que resume essa mesma distribuição num
-número: é o quadrado do coeficiente de variação do grau dos machos.</p>
-<p>Os dois primeiros painéis dizem por que o Is não basta sozinho. Duas
-populações com distribuições de grau bem diferentes podem ter o mesmo
-Is, e em particular ele não separa uma população em que metade dos
-machos ficou sem acasalar de outra em que todos acasalaram alguma
-vez.</p>
+<p>O primeiro painel é o grau médio sobre todos os machos, inclusive os
+que não acasalaram. O segundo é a oportunidade de seleção sexual, que
+resume a distribuição do grau dos machos num número: é o quadrado do
+coeficiente de variação desse grau.</p>
 <div id="sem-seleção-natural-2" class="section level3 tabset">
 <h3 class="tabset">Sem seleção natural</h3>
 <div id="a_max-200-4" class="section level4 tabset">
@@ -1201,7 +1201,7 @@ portanto não evolui; o traço do macho é herdável e livre para responder
 à seleção. σz é apenas condição inicial, fixada em 1.0.</p>
 <p>Aqui a escolha da fêmea é a <em>causa</em> da seleção: a distribuição
 de preferências não muda ao longo do tempo e gera a pressão seletiva
-sobre os machos, cuja resposta evolutiva é o que o estudo mede.</p>
+sobre os machos, cuja resposta evolutiva o estudo mede.</p>
 <p>Todas as figuras das seções seguintes têm a mesma estrutura de três
 colunas, e vale entendê-la uma vez:</p>
 <ul>
@@ -1213,43 +1213,49 @@ preferência?</li>
 <li><strong>Colunas 2 e 3</strong> são trajetórias. No eixo horizontal
 está a geração, de 1 a
 <ol start="100" style="list-style-type: decimal">
-<li>Cada uma mostra uma das duas pontas do gradiente, σp = 0.2 à
-esquerda e σp = 2.0 à direita, com a média das réplicas e uma sombra de
-um desvio. Respondem: como a população chegou até lá, e se chegou a um
-valor estável ou ainda estava se movendo na geração 100.</li>
+<li>Cada uma mostra um dos dois valores extremos de σp, 0.2 à esquerda e
+2.0 à direita, com a média das réplicas e uma sombra de um desvio.
+Respondem: que trajetória produziu esse valor, e se ele estava estável
+ou ainda mudando na geração 100.</li>
 </ol></li>
 </ul>
-<p>Ou seja, a coluna 1 é o destino ao longo de todo o gradiente, e as
-colunas 2 e 3 são o caminho, nos dois extremos dele. As linhas são as
-quatro curvas de preferência, com a mesma cor e o mesmo tipo de traço em
-todo o documento.</p>
+<p>Ou seja, a coluna 1 dá o valor final ao longo de todo o gradiente, e
+as colunas 2 e 3 dão a trajetória que o produziu, nos dois valores
+extremos. As linhas são as quatro curvas de preferência, com a mesma cor
+e o mesmo tipo de traço em todo o documento.</p>
 <div id="o-efeito-de-σp-sobre-uma-população" class="section level2">
 <h2>2.0 O efeito de σp sobre uma população</h2>
-<p>O eixo deste estudo é simples de enunciar e difícil de visualizar. A
-figura abaixo tem quatro colunas: as duas primeiras são as duas pontas
-do gradiente na geração 1, σp = 0.2 e σp = 2.0, e as duas seguintes as
-mesmas duas pontas na geração 100, depois de o traço masculino ter
-evoluído. Ela se lê em duas direções: dentro de cada par, o efeito de
-σp; de um par para o outro, o efeito de cem gerações de seleção.</p>
+<p>O eixo deste estudo é σp, a dispersão dos picos de preferência entre
+as fêmeas. A figura abaixo tem quatro colunas: as duas primeiras são σp
+= 0.2 e σp = 2.0 na geração 1, e as duas seguintes os mesmos dois
+valores na geração 100, depois de o traço masculino ter evoluído. Ela se
+lê em duas direções: dentro de cada par, o efeito de σp; de um par para
+o outro, o efeito de cem gerações de seleção.</p>
 <p>As quatro colunas vêm de réplicas reais das rodadas, e o rodapé
-identifica cada uma. As duas pontas do gradiente são rodadas distintas,
-de modo que os machos não são os mesmos indivíduos nas duas; na geração
-1, porém, eles são sorteados da mesma distribuição em ambas, com σz
-fixado em 1.0, e é por isso que a comparação entre elas isola σp. Os
-eixos são comuns às quatro colunas, sem o que a fuga do traço não se
-veria.</p>
+identifica cada uma. Os dois valores de σp são rodadas distintas, de
+modo que os machos não são os mesmos indivíduos nas duas; na geração 1,
+porém, eles são sorteados da mesma distribuição em ambas, com σz fixado
+em 1.0, e é por isso que a comparação entre elas isola σp. Os eixos são
+comuns às quatro colunas, sem o que a fuga do traço não se veria.</p>
 <p>Em cima está a rede de acasalamentos. Abaixo dela, a curva de aceite
 de catorze fêmeas sorteadas, com os machos disponíveis marcados no eixo:
-com σp pequeno as curvas se empilham umas sobre as outras, porque todas
-as fêmeas querem o mesmo macho. Depois, os casais que se formaram, com a
-diagonal marcando onde o macho é igual ao pico da fêmea. Embaixo,
-quantas parceiras cada macho teve, que é sobre quem a seleção sexual
-está agindo neste estudo.</p>
+com σp pequeno as curvas de aceite se empilham umas sobre as outras,
+porque todas as fêmeas querem o mesmo macho. Depois, os casais que se
+formaram, com a diagonal marcando onde o macho é igual ao pico da fêmea.
+Embaixo, quantas parceiras cada macho teve, que é sobre quem a seleção
+sexual está agindo neste estudo.</p>
 <p>Como neste estudo a preferência é re-sorteada a cada geração, as
 curvas de aceite ocupam a mesma posição na geração 1 e na geração 100, e
 o que se desloca são os machos. A comparação a fazer entre os dois pares
 de colunas é entre a posição dos tracinhos no eixo, que marcam os machos
 existentes, e a posição das curvas, que não se movem.</p>
+<p>As abas percorrem a curva de preferência, o regime de seleção natural
+e o <span class="math inline">\(A_{max}\)</span>. <strong>O teto de
+parceiros fica em k = 5 em todas elas</strong>, e é o único fator do
+desenho que não varia aqui: com ele nas abas seriam 72 figuras em vez de
+24, e cada uma reconstrói duas réplicas de cem gerações. O valor de k
+aparece no subtítulo de cada figura, junto com o resto da combinação. Os
+três níveis de k estão nas seções de resultados, da 2.1 à 2.3.</p>
 <div id="curva-por-curva-1" class="section level3 tabset">
 <h3 class="tabset">Curva por curva</h3>
 <div id="aleatória-1" class="section level4 tabset">
@@ -1367,9 +1373,10 @@ produzir efeito.</p>
 </div>
 <div id="métricas-de-rede" class="section level2 tabset">
 <h2 class="tabset">2.1 Métricas de rede</h2>
-<p>As quatro métricas de estrutura da rede. Na coluna 1, o valor de cada
-uma na geração 100 ao longo do gradiente de σp; nas colunas 2 e 3, como
-cada uma chegou até ali, com σp = 0.2 e com σp = 2.0.</p>
+<p>Neste tópico mostramos as quatro métricas de estrutura da rede. Na
+coluna 1 está o valor de cada uma na geração 100 ao longo do gradiente
+de σp; nas colunas 2 e 3, a trajetória das cem gerações que produziu
+esse valor, com σp = 0.2 e com σp = 2.0.</p>
 <div id="sem-seleção-natural-3" class="section level3 tabset">
 <h3 class="tabset">Sem seleção natural</h3>
 <div id="a_max-200-6" class="section level4 tabset">
@@ -1471,8 +1478,9 @@ cada uma chegou até ali, com σp = 0.2 e com σp = 2.0.</p>
 <h2 class="tabset">2.2 O traço do macho (z)</h2>
 <p>O traço é a variável evolutiva deste estudo, e as duas linhas de
 painéis mostram a sua média e a sua variância. Na coluna 1, os valores
-na geração 100 ao longo do gradiente de σp; nas colunas 2 e 3, as cem
-gerações que levaram até ali, com σp = 0.2 e com σp = 2.0.</p>
+na geração 100 ao longo do gradiente de σp; nas colunas 2 e 3, a
+trajetória das cem gerações que produziu esses valores, com σp = 0.2 e
+com σp = 2.0.</p>
 <p>Dois aspectos merecem atenção. Sem seleção natural, a média do traço
 se desloca bem além do ótimo ecológico, que é 5, porque nada se opõe à
 seleção sexual. Quanto à variância, o modelo usa segregação
@@ -1582,10 +1590,10 @@ combinação de curva e regime chega ao seu próprio equilíbrio.</p>
 </div>
 <div id="poliandria-realizada" class="section level2 tabset">
 <h2 class="tabset">2.3 Poliandria realizada</h2>
-<p>As mesmas quatro variáveis de acesso ao acasalamento da seção 1.2,
-agora com evolução. Na coluna 1, o valor de cada uma na geração 100 ao
-longo do gradiente de σp; nas colunas 2 e 3, a trajetória nos dois
-extremos do gradiente.</p>
+<p>Neste tópico mostramos as mesmas quatro variáveis de acesso ao
+acasalamento da seção 1.2, mas agora com evolução. Na coluna 1 está o
+valor de cada uma na geração 100 ao longo do gradiente de σp; nas
+colunas 2 e 3, a trajetória em σp = 0.2 e em σp = 2.0.</p>
 <p>Aqui as colunas 2 e 3 dizem algo que a coluna 1 não mostra: se o
 acesso ao acasalamento se manteve estável ao longo das cem gerações ou
 se mudou enquanto o traço evoluía.</p>
